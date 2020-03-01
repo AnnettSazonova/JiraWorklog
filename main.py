@@ -1,4 +1,3 @@
-"""Jira Work Logger. Author timoha199490@gmail.com"""
 import os
 import sys
 import re
@@ -12,12 +11,9 @@ import xls
 def start():
     """Main method"""
     configuration.init_config()
-    print('Enter Project Name:')
-    project_key = input()
-    print('Enter date start (yyyy-mm-dd):')
-    date_start_str = input()
-    print('Enter date end (yyyy-mm-dd). You can skip it, date will be +1 week:')
-    date_end_str = input()
+    project_key = input('Project Name:')
+    date_start_str = input('Enter start date (yyyy-mm-dd):')
+    date_end_str = input("Enter end date (yyyy-mm-dd). Skip to add 1 week:")
 
     date_start_is_valid = check_date(date_start_str)
     date_end_is_valid = check_date(date_end_str)
@@ -25,7 +21,7 @@ def start():
         end_date_is_auto = True
         date_end_is_valid = False
 
-    if date_start_is_valid is False or (date_end_is_valid  is False and date_end_str != ''):
+    if date_start_is_valid is False or (date_end_is_valid is False and date_end_str != ''):
         print("Please, use specific format for date: yyyy-mm-dd")
         input()
         exit()

@@ -1,4 +1,3 @@
-"""Reading config data or creating in. Author timoha199490@gmail.com"""
 import os
 import configparser
 
